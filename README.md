@@ -1,66 +1,49 @@
-## Foundry
+# SSI-BotMarginPool Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A Solidity smart contract project for managing liquidity pools with zkEVM verification.
 
-Foundry consists of:
+## Project Structure
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- `src/LPManager.sol`: Main contract for managing liquidity pools
+- `src/Deposit.sol`: Contract for handling deposits
+- `src/Withdraw.sol`: Contract for handling withdrawals
+- `scripts/deploy.js`: Deployment script
+- `test/LPManager.test.js`: Test suite for the LPManager contract
 
-## Documentation
+## Setup
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+1. Install dependencies:
+```bash
+npm install
 ```
 
-### Test
-
-```shell
-$ forge test
+2. Create a `.env` file with your private key:
+```
+PRIVATE_KEY=your_private_key_here
 ```
 
-### Format
-
-```shell
-$ forge fmt
+3. Compile contracts:
+```bash
+npx hardhat compile
 ```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
+4. Run tests:
+```bash
+npx hardhat test
 ```
 
-### Anvil
-
-```shell
-$ anvil
+5. Deploy to Polygon zkEVM testnet:
+```bash
+npx hardhat run scripts/deploy.js --network polygonZkTestnet
 ```
 
-### Deploy
+## Features
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+- Liquidity pool management
+- POL deposit handling
+- zkEVM verification
+- Secure withdrawal mechanism
 
-### Cast
+## License
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+MIT

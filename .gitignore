@@ -1,6 +1,38 @@
-# Compiler files
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+
+# Hardhat files
 cache/
-out/
+artifacts/
+typechain/
+typechain-types/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage directory
+coverage/
+coverage.json
+
+# Build output
+dist/
+build/
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Ignores development broadcast logs
 !/broadcast
@@ -9,6 +41,3 @@ out/
 
 # Docs
 docs/
-
-# Dotenv file
-.env
