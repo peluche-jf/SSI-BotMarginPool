@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.30;
+pragma solidity ^0.8.20;
 
 contract LPManager {
     address public owner;
@@ -14,6 +14,6 @@ contract LPManager {
     // Function to handle POL deposits and return the hash
     function handlePOLDeposit(uint256 polAmount) external returns (bytes32) {
         polDeposits[polAmount] = msg.sender;
-        return keccak256(abi.encodePacked(polAmount, msg.sender));
+        return bytes32(uint256(block.timestamp));
     }
-}  
+}
